@@ -1,0 +1,55 @@
+<br><br>
+<div class="row m-auto ta" style="max-width: 100%;">
+  <div class="col-md-4" *ngFor="let item of list" class="col-3 p-5">
+    <!--Card-->
+    <mdb-card cascade="true" wider="true">
+
+      <!--Card image-->
+      <div class="view view-cascade overlay waves-light" mdbWavesEffect>
+        <mdb-card-img [src]="item.info.sprites.front_default" alt="Card image cap" *ngIf="item.info"></mdb-card-img>
+        <a>
+          <div class="mask rgba-white-slight"></div>
+        </a>
+      </div>
+      <!--/Card image-->
+
+      <mdb-card-body cascade="true" class="text-center">
+        <!--Card content-->
+        <!--Title-->
+        <h4 class="card-title" id="c">
+          <strong>#{{ item.info.id }}</strong><br>
+          <strong>{{ item.name }}</strong>
+        </h4><br>
+
+        <div *ngIf="item.info" id="c" class="rgba-yellow-strong-text">
+          <div class="p-1 red accent-2 rounded-top">
+          <h5>
+            <strong>Abilities:</strong><br>
+            <small id="c" *ngFor="let ability of item.info.abilities" >| {{ability.ability.name}} |</small>
+          </h5>
+
+          <h5>
+            <strong>Types:</strong><br>
+            <small id="c" *ngFor="let type of item.info.types">| {{type.type.name}} |</small>
+          </h5>
+        </div>
+
+          <h5 class="grey grey lighten-3 rounded-bottom">
+            <strong>Stats:</strong><br>
+            <small *ngFor="let stats of item.info.stats">{{stats.stat.name}} :{{stats.base_stat}}<br></small>
+          </h5>
+        </div>
+      </mdb-card-body>
+      <!--/.Card content-->
+
+    </mdb-card>
+    <!--/.Card-->
+</div>
+
+<div class="container-fluid botoes">
+  <button class="col-11 back btn btn-light waves-effect back" *ngIf="page > 1" (click)="getLista2()" type="button" mdbBtn mdbWavesEffect><img src="assets/img/greatball.png" width="30px"><b> Back</b></button>
+  <button class="col-11 next btn btn-light waves-effect next" (click)="scrollToTop()" (click)="getLista()" type="button" mdbBtn mdbWavesEffect><img src="assets/img/ultraball.png" width="30px"><b> Next</b></button>
+</div>
+  
+
+  
