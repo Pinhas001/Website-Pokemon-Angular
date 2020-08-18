@@ -4,6 +4,7 @@ ______________________________
 Este projeto consiste num website de um site de pokemon.
 
 Projeto de Angular 9.
+
 Este Website não se encontra disponivel online.
 ______________________________
 
